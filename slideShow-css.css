@@ -19,7 +19,7 @@
 	justify-content: center;
 }
 
-.slideshow>input[type="radio"]{
+.slideshow>input[name="slide"]{
 	display: none;
 }
 
@@ -41,7 +41,9 @@ input[name="slide"]:nth-child(2):checked ~ .slides>li:nth-child(2),
 input[name="slide"]:nth-child(3):checked ~ .slides>li:nth-child(3),
 input[name="slide"]:nth-child(4):checked ~ .slides>li:nth-child(4){
 	display: block;
+	animation: slide 1s;
 }
+
 
 .labels{
 	display: flex;
@@ -49,5 +51,22 @@ input[name="slide"]:nth-child(4):checked ~ .slides>li:nth-child(4){
 }
 
 .labels>li:hover{
-	box-shadow: 0px 5px 10px #abc, 0px -5px 10px #abc;
+	box-shadow: 0px 6px 10px #789, 0px -3px 10px #789;
+	animation: slide 0.7s;
+}
+
+input[name="slide"]:nth-child(1):checked ~ .labels>li:nth-child(1),
+input[name="slide"]:nth-child(2):checked ~ .labels>li:nth-child(2),
+input[name="slide"]:nth-child(3):checked ~ .labels>li:nth-child(3),
+input[name="slide"]:nth-child(4):checked ~ .labels>li:nth-child(4){
+	box-shadow: -3px 6px 5px #6682b4,-3px 0px 5px #6682b4;
+}
+
+@keyframes slide{
+	from{
+		opacity: 0.7;
+	}
+	to{
+		opacity: 1;
+	}
 }
